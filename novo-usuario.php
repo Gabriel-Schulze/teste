@@ -9,7 +9,7 @@
     <title>Novo Usuários</title>
 </head>
 <body>
-    <form action="php/salvarUsuario.php?opcao=I" method="POST">
+    <form action="php/salvarUsuario.php?opcao=I&id=0" method="POST" enctype="multipart/form-data">
         <p>
             <label for="iNome">Nome:</label>
             <input type="text" maxlength="80" name="nNome" id="iNome" require>
@@ -32,6 +32,10 @@
         <p>
             <label for="iSenha">Senha:</label>
             <input type="password" maxlength="8" name="nSenha" id="iSenha" require>
+        </p>
+        <p>
+            <label for="iFoto">Foto:</label>
+            <input type="file" name="nFoto" id="iFoto" accept="image/*">
         </p>
         <p>
             <input type="checkbox" name="nAtivo" id="iAtivo">
