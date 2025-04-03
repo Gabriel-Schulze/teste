@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if($_SESSION['tipo_usuario'] != 1) {
+        header("location: index.php");
+    }
+
     include("php/funcoes.php");
 ?>
 <!DOCTYPE html>
@@ -15,11 +20,13 @@
     
     <h4>Usuários</h4>
 
-    <p>
-        <a href="novo-usuario.php">
-            <input type="button" value="Novo Usuário">
-        </a>
-    </p>
+    <?php if($_SESSION['tipo_usuario'] == 1) {?>
+        <p>
+            <a href="novo-usuario.php">
+                <input type="button" value="Novo Usuário">
+            </a>
+        </p>
+    <?php }?>
     <table border="1">
         <tr>
             <th>ID</th>
